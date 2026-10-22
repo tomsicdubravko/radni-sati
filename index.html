@@ -265,15 +265,21 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
 @media(max-width:400px){.next-holiday-row{padding:10px 15px}}
 </style><style>nav .wrap{gap:12px}.nav-r{display:flex;align-items:center;gap:18px}.nav-r .about-link{color:var(--neon-cyan);font-size:.8rem;font-weight:600}@media(max-width:420px){.nav-r{gap:12px}.nav-r .about-link{font-size:.75rem}}.nav-r a.back-link[href*="evidencija"]::after{content:"→"}</style><meta name="google-adsense-account" content="ca-pub-6830707036064247">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6830707036064247" crossorigin="anonymous"></script>
-</head>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://radni-sati.hr/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Radni-sati.hr – besplatni alati za radno vrijeme">
+<meta property="og:site_name" content="Radni-sati.hr">
+<meta name="twitter:card" content="summary_large_image">
+<style>nav.rs-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}.rs-menu{display:flex;gap:18px;align-items:center}.rs-menu a{color:var(--text-light,#e2e8f0);font-size:.84rem;font-weight:600;text-decoration:none;white-space:nowrap;opacity:.8}.rs-menu a:hover,.rs-menu a[aria-current]{color:var(--neon-cyan,#00f2fe);opacity:1}.rs-burger{display:none;background:rgba(255,255,255,.04);border:1px solid var(--border-dim,rgba(255,255,255,.15));color:#fff;border-radius:8px;width:42px;height:38px;font-size:1.25rem;line-height:1;cursor:pointer}@media(max-width:960px){nav.rs-nav .wrap{flex-wrap:wrap}.rs-burger{display:inline-flex;align-items:center;justify-content:center}.rs-menu{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:6px 0 2px}.rs-menu.open{display:flex}.rs-menu a{padding:11px 4px;border-top:1px solid rgba(255,255,255,.08);font-size:.95rem;opacity:.9}}</style></head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <a href="/" class="wordmark">RADNI-<span>SATI</span>.HR</a>
-    <span class="nav-r"><a href="/o-nama/" class="about-link">O nama</a><a href="/evidencija-rada/evidencija-rada.html" class="back-link">Otvori evidenciju →</a></span>
-  </div>
-</nav>
+<nav class="rs-nav"><div class="wrap"><a href="/" class="wordmark">RADNI-<span>SATI</span>.HR</a><button type="button" class="rs-burger" aria-expanded="false" aria-controls="rs-menu" aria-label="Otvori izbornik">☰</button><div class="rs-menu" id="rs-menu"><a href="/" data-sek="/">Naslovnica</a><a href="/fond-sati-2026/fond-sati-2026.html" data-sek="/fond-sati" id="rs-fond">Fond sati</a><a href="/kalendar-blagdana/kalendar-blagdana.html" data-sek="/kalendar-blagdana">Kalendar</a><a href="/planer-godisnjeg/" data-sek="/planer-godisnjeg">Planer godišnjeg</a><a href="/evidencija-rada/evidencija-rada.html" data-sek="/evidencija-rada">Evidencija rada</a><a href="/o-nama/" data-sek="/o-nama">O nama</a><a href="/kontakt/" data-sek="/kontakt">Kontakt</a></div></div></nav>
 
 <header class="hero">
   <div class="wrap hero-layout"><div class="hero-copy">
@@ -334,6 +340,11 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
       <p>Svi blagdani i neradni dani u Hrvatskoj, po godinama, s danima u tjednu i oznakom padaju li na radni dan.</p>
       <span class="go">Otvori kalendar →</span>
     </a>
+    <a class="tool" href="/planer-godisnjeg/">
+      <span class="ic">🏖️</span><h3>Planer godišnjeg odmora</h3>
+      <p>Kliknite dane u kalendaru i vidite koliko slobodnih dana dobivate uz vikende i blagdane. Prijedlog najboljeg rasporeda, ispis i Excel.</p>
+      <span class="go">Otvori planer →</span>
+    </a>
     <a class="tool" href="/kalkulator-sati/kalkulator-sati.html">
       <span class="ic">🧮</span><h3>Kalkulator sati</h3>
       <p>Prekovremeni, noćni rad i rad nedjeljom i blagdanom izračunat iz početka i završetka rada, uz okvirni bruto iznos po satnici.</p>
@@ -345,7 +356,7 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
     <h2>Što je fond sati?</h2>
     <p>Fond sati je broj sati koje radnik s punim radnim vremenom treba imati u mjesecu. Računa se kao broj dana od ponedjeljka do petka pomnožen s 8 sati, a uključuje i blagdane koji padnu na radni dan. Mjesečni fond kreće se između 160 i 184 sata.</p>
     <h3>Razlika između fonda sati i radnih sati</h3>
-    <p>Radni sati su sati koje radnik stvarno odradi, dakle fond sati umanjen za blagdane. Blagdani se u obračunu plaće iskazuju posebno i plaćaju kao naknada.</p>
+    <p>Radni sati su redovni sati prema kalendaru, odnosno fond sati umanjen za blagdane. Stvarno odrađeni sati mogu biti manji zbog godišnjeg odmora, bolovanja ili druge odsutnosti. Blagdani se u obračunu plaće iskazuju posebno i plaćaju kao naknada.</p>
     <h3>Zašto voditi evidenciju radnog vremena</h3>
     <p>Poslodavac je dužan za svakog radnika voditi evidenciju radnog vremena: početak i završetak rada, prekovremene sate, noćni rad, rad nedjeljom i blagdanom te odsutnosti. Evidencija je temelj za obračun plaće i prvo što inspekcija traži.</p>
   </section>
@@ -353,7 +364,7 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
 
 <footer>
   <div class="wrap">Radni sati · fond sati, blagdani i evidencija rada — <a href="/" style="color:var(--neon-cyan);">radni-sati.hr</a></div>
-<div style="text-align:center;margin-top:12px"><a href="/o-nama/" style="color:var(--neon-cyan)">O nama</a> · Izradio <a href="https://retroapplab.com/" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan)">RetroAppLab</a></div><div style="text-align:center;margin-top:8px;font-size:.8rem"><a href="/politika-privatnosti/" style="color:var(--neon-cyan)">Pravila privatnosti</a></div></footer>
+<div style="text-align:center;margin-top:12px"><a href="/o-nama/" style="color:var(--neon-cyan)">O nama</a> · Izradio <a href="https://retroapplab.com/" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan)">RetroAppLab</a></div><div style="text-align:center;margin-top:8px;font-size:.8rem"><a href="/kontakt/" style="color:var(--neon-cyan)">Kontakt</a> · <a href="/politika-privatnosti/" style="color:var(--neon-cyan)">Pravila privatnosti</a></div></footer>
 
 
 <script>
@@ -427,5 +438,6 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
   setInterval(update,1000);
 })();
 </script>
+<script>(function(){var b=document.querySelector(".rs-burger"),m=document.getElementById("rs-menu");if(!b||!m)return;b.onclick=function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o);b.textContent=o?"✕":"☰";b.setAttribute("aria-label",o?"Zatvori izbornik":"Otvori izbornik")};var y=new Date().getFullYear(),f=document.getElementById("rs-fond");if(f&&y>=2024&&y<=2028)f.href="/fond-sati-"+y+"/fond-sati-"+y+".html";var p=location.pathname;m.querySelectorAll("a[data-sek]").forEach(function(a){var s=a.dataset.sek;if(s==="/"?(p==="/"||p==="/index.html"):p.indexOf(s)===0)a.setAttribute("aria-current","page")});})();</script>
 </body>
 </html>

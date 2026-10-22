@@ -208,6 +208,22 @@
     </style>
 <meta name="google-adsense-account" content="ca-pub-6830707036064247">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6830707036064247" crossorigin="anonymous"></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:title" content="Evidencija radnih sati — besplatna evidencija radnog vremena | Radni sati">
+<meta property="og:description" content="Besplatna evidencija radnih sati po Zakonu o radu: unos radnog vremena po danima, prekovremeni i noćni rad, blagdani, Excel i PDF izvoz.">
+<meta property="og:url" content="https://radni-sati.hr/evidencija-rada/evidencija-rada.html">
+<meta property="og:image" content="https://radni-sati.hr/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Radni-sati.hr – besplatni alati za radno vrijeme">
+<meta property="og:site_name" content="Radni-sati.hr">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <div style="background:#2c3e50; padding:10px 12px; display:flex; align-items:center; gap:10px; position:sticky; top:0; z-index:9999;">
@@ -277,6 +293,7 @@
                 <button onclick="exportEvidencija()" style="padding:12px 8px;background:#2980b9;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:14px;">⬇ Excel</button>
                 <button onclick="ispisEvidencija()" style="padding:12px 8px;background:#8e44ad;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:14px;">🖨️ PDF</button>
                 <button onclick="prikaziStatistiku()" style="padding:12px 8px;background:#e67e22;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:14px;">📊 Statistika</button>
+                <button onclick="pobOtvori()" style="grid-column:1/-1;padding:12px 8px;background:#34495e;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:14px;">📄 Ispiši prazan obrazac</button>
             </div>
         </div>
     </div>
@@ -1700,6 +1717,81 @@ window.addEventListener('load', function() {
     document.getElementById('modul-evidencija').classList.add('aktivan');
 });
 </script>
-<footer style="text-align:center;padding:18px 12px;font-size:12px;opacity:.85"><a href="/politika-privatnosti/" style="color:inherit">Pravila privatnosti</a> · <a href="/" style="color:inherit">radni-sati.hr</a></footer>
+<p class="rs-prijava" style="text-align:center;margin:28px auto 6px;padding:0 16px;font-size:.85rem;opacity:.85">Primijetili ste pogrešku ili imate ideju? <a href="/kontakt/?tema=greska&amp;s=/evidencija-rada/evidencija-rada.html" style="color:#0369a1;font-weight:600">Prijavi pogrešku ili predloži poboljšanje →</a></p>
+<footer style="text-align:center;padding:18px 12px;font-size:12px;opacity:.85"><a href="/kontakt/" style="color:inherit">Kontakt</a> · <a href="/politika-privatnosti/" style="color:inherit">Pravila privatnosti</a> · <a href="/" style="color:inherit">radni-sati.hr</a></footer>
+
+<!-- PRAZAN OBRAZAC EVIDENCIJE -->
+<div id="pobModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;align-items:center;justify-content:center;padding:16px;">
+  <div role="dialog" aria-modal="true" aria-labelledby="pobNaslov" style="background:#fff;border-radius:12px;max-width:360px;width:100%;padding:20px;font-family:Arial,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.3);">
+    <h3 id="pobNaslov" style="margin:0 0 6px;font-size:18px;color:#2c3e50;">📄 Prazan obrazac evidencije</h3>
+    <p style="margin:0 0 14px;font-size:13px;color:#666;">Obrazac za ručno popunjavanje. Datumi, dani u tjednu i blagdani upisuju se automatski.</p>
+    <div style="display:flex;gap:8px;margin-bottom:16px;">
+      <select id="pobMjesec" class="putni-input" style="flex:1;"></select>
+      <select id="pobGodina" class="putni-input" style="flex:1;"></select>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <button onclick="pobZatvori()" style="flex:1;padding:11px;background:#ecf0f1;color:#2c3e50;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">Odustani</button>
+      <button onclick="pobIspisi()" style="flex:1;padding:11px;background:#8e44ad;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">🖨️ Ispiši / PDF</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var MJ_IME=['','Siječanj','Veljača','Ožujak','Travanj','Svibanj','Lipanj','Srpanj','Kolovoz','Rujan','Listopad','Studeni','Prosinac'];
+  var DAN_KR=['Ned','Pon','Uto','Sri','Čet','Pet','Sub'];
+  var PUNI={'Dan sjećanja':'Dan sjećanja na žrtve Domovinskog rata i Dan sjećanja na žrtvu Vukovara i Škabrnje','Dan domovinske zahvalnosti':'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja','Sveta tri kralja':'Bogojavljenje ili Sveta tri kralja'};
+  function el(id){return document.getElementById(id);}
+  window.pobOtvori=function(){
+    var mSel=el('pobMjesec'),gSel=el('pobGodina'),evM=el('evMjesec'),evG=el('evGodina'),now=new Date();
+    if(!mSel.options.length){for(var i=1;i<=12;i++){var o=document.createElement('option');o.value=i;o.textContent=MJ_IME[i];mSel.appendChild(o);}}
+    gSel.innerHTML='';
+    var godine=[];
+    if(evG&&evG.options.length){for(var k=0;k<evG.options.length;k++)godine.push(+evG.options[k].value);}
+    if(!godine.length){for(var y=now.getFullYear()-1;y<=now.getFullYear()+2;y++)godine.push(y);}
+    godine.forEach(function(y){var o=document.createElement('option');o.value=y;o.textContent=y+'.';gSel.appendChild(o);});
+    mSel.value=(evM&&evM.value)||String(now.getMonth()+1);
+    gSel.value=(evG&&evG.value)||String(now.getFullYear());
+    el('pobModal').style.display='flex';
+  };
+  window.pobZatvori=function(){el('pobModal').style.display='none';};
+  el('pobModal').addEventListener('click',function(e){if(e.target===this)pobZatvori();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el('pobModal').style.display==='flex')pobZatvori();});
+  window.pobIspisi=function(){
+    var mj=+el('pobMjesec').value,god=+el('pobGodina').value,zadnji=new Date(god,mj,0).getDate();
+    var praz=(typeof getPrazniciZaGodinu==='function')?getPrazniciZaGodinu(god):{};
+    var redovi='';
+    for(var d=1;d<=zadnji;d++){
+      var dt=new Date(god,mj-1,d),dw=dt.getDay(),kl=String(mj).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+      var bl=praz[kl]?(PUNI[praz[kl]]||praz[kl]):'',vik=dw===0||dw===6;
+      var cls=bl?'bl':(vik?'vk':'');
+      redovi+='<tr class="'+cls+'"><td class="c">'+d+'.</td><td class="c">'+String(d).padStart(2,'0')+'.'+String(mj).padStart(2,'0')+'.</td><td class="dn"><b>'+DAN_KR[dw]+'</b>'+(bl?'<span class="bln">'+bl+'</span>':'')+'</td><td></td><td></td><td></td><td></td></tr>';
+    }
+    var css='@page{size:A4 portrait;margin:9mm 12mm}*{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;color:#111;margin:0;font-size:9.5pt}'+
+      'h1{font-size:14pt;margin:0;text-align:center;letter-spacing:.5px}.mj{text-align:center;font-size:11pt;margin:1mm 0 3mm;font-weight:bold}'+
+      '.pod{display:grid;grid-template-columns:1fr 1fr;gap:2mm 8mm;margin-bottom:3mm;font-size:9pt}.pod div{border-bottom:1px solid #555;padding-bottom:.5mm;min-height:5.5mm}.pod span{color:#555}'+
+      'table{width:100%;border-collapse:collapse;table-layout:fixed}th,td{border:1px solid #666;padding:0 1.5mm;height:5.8mm;vertical-align:middle}'+
+      'th{background:#e9ecef;font-size:8.5pt;height:7mm}td.c{text-align:center}td.dn{font-size:8.5pt;line-height:1.1}'+
+      'tr.vk td{background:#f1f3f5}tr.bl td{background:#fde8e8}.bln{display:block;font-size:6.5pt;color:#b42318;line-height:1.05;overflow:hidden;max-height:4.2mm}'+
+      '.uk{display:flex;justify-content:flex-end;gap:4mm;margin-top:3mm;font-weight:bold;font-size:9.5pt}.uk span{display:inline-block;width:30mm;border-bottom:1px solid #111}'+
+      '.leg{font-size:7.5pt;color:#444;margin-top:2mm}.leg i{display:inline-block;width:3mm;height:3mm;border:1px solid #999;vertical-align:-0.5mm;margin:0 1mm 0 3mm}'+
+      '.pot{display:flex;justify-content:space-between;margin-top:8mm}.pot div{width:42%;border-top:1px solid #111;text-align:center;padding-top:1mm;font-size:8.5pt}'+
+      '.izv{margin-top:2mm;font-size:7pt;color:#777;text-align:right}'+
+      '*{-webkit-print-color-adjust:exact;print-color-adjust:exact}';
+    var html='<!DOCTYPE html><html lang="hr"><head><meta charset="utf-8"><title>Evidencija radnog vremena – '+MJ_IME[mj]+' '+god+'.</title><style>'+css+'</style></head><body>'+
+      '<h1>EVIDENCIJA RADNOG VREMENA</h1><div class="mj">'+MJ_IME[mj]+' '+god+'.</div>'+
+      '<div class="pod"><div><span>Poslodavac:</span></div><div><span>OIB poslodavca:</span></div><div><span>Radnik:</span></div><div><span>OIB radnika:</span></div><div><span>Radno mjesto:</span></div><div><span>Ugovoreno radno vrijeme (sati tjedno):</span></div></div>'+
+      '<table><colgroup><col style="width:8%"><col style="width:10%"><col style="width:22%"><col style="width:13%"><col style="width:13%"><col style="width:9%"><col style="width:25%"></colgroup>'+
+      '<thead><tr><th>Dan</th><th>Datum</th><th>Dan u tjednu</th><th>Početak rada</th><th>Završetak rada</th><th>Sati</th><th>Napomena</th></tr></thead><tbody>'+redovi+'</tbody></table>'+
+      '<div class="uk">Ukupno sati: <span></span></div>'+
+      '<div class="leg">Oznake:<i style="background:#fde8e8"></i>blagdan<i style="background:#f1f3f5"></i>subota i nedjelja</div>'+
+      '<div class="pot"><div>Potpis radnika</div><div>Potpis i pečat poslodavca</div></div>'+
+      '<div class="izv">Obrazac izrađen na radni-sati.hr</div></body></html>';
+    pobZatvori();
+    var fr=document.createElement('iframe');fr.style.cssText='position:fixed;right:0;bottom:0;width:0;height:0;border:0';document.body.appendChild(fr);
+    var dc=fr.contentWindow.document;dc.open();dc.write(html);dc.close();
+    setTimeout(function(){fr.contentWindow.focus();fr.contentWindow.print();setTimeout(function(){fr.remove();},2000);},300);
+  };
+})();
+</script>
 </body>
 </html>
