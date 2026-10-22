@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blagdani i neradni dani u Hrvatskoj po godinama | Radni sati</title>
-<meta name="description" content="Popis svih blagdana i neradnih dana u Hrvatskoj s danima u tjednu, kalendar po mjesecima i broj blagdana koji padaju na radni dan.">
+<title>Blagdani, neradni dani i računovodstveni rokovi u Hrvatskoj | Radni sati</title>
+<meta name="description" content="Kalendar blagdana i neradnih dana u Hrvatskoj po godinama, s produženim vikendima, fondom sati i računovodstvenim rokovima za 2026.">
 <link rel="canonical" href="https://radni-sati.hr/kalendar-blagdana/kalendar-blagdana.html">
-<meta property="og:title" content="Blagdani i neradni dani u Hrvatskoj po godinama | Radni sati">
-<meta property="og:description" content="Popis svih blagdana i neradnih dana u Hrvatskoj s danima u tjednu, kalendar po mjesecima i broj blagdana koji padaju na radni dan.">
+<meta property="og:title" content="Blagdani, neradni dani i računovodstveni rokovi u Hrvatskoj | Radni sati">
+<meta property="og:description" content="Kalendar blagdana i neradnih dana u Hrvatskoj po godinama, s produženim vikendima, fondom sati i računovodstvenim rokovima za 2026.">
 <meta property="og:url" content="https://radni-sati.hr/kalendar-blagdana/kalendar-blagdana.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="hr_HR">
@@ -252,7 +252,7 @@ header.hero{padding:40px 0 20px}.hero h1{font-size:clamp(1.8rem,4vw,2.8rem)}.her
   <div class="wrap">
     <span class="eyebrow">KALENDAR · BLAGDANI</span>
     <h1 id="naslov">Blagdani i neradni dani u Hrvatskoj</h1>
-    <p class="lead">Pregled svih 12 mjeseci, hrvatskih blagdana i fonda sati na jednom mjestu. Odaberite godinu i kliknite na blagdan za detalje.</p>
+    <p class="lead">Pregled svih 12 mjeseci s hrvatskim blagdanima, fondom sati i računovodstvenim rokovima. Uključite „Računovodstveni rokovi“ i kliknite na datum za popis obveza toga dana.</p>
     <div class="ysel"><button id="prev" aria-label="Prethodna godina">‹</button><b id="god"></b><button id="next" aria-label="Sljedeća godina">›</button></div>
     <nav class="god-linkovi" aria-label="Blagdani po godinama"><a href="/kalendar-blagdana/2024/">2024.</a><a href="/kalendar-blagdana/2025/">2025.</a><a href="/kalendar-blagdana/2026/">2026.</a><a href="/kalendar-blagdana/2027/">2027.</a><a href="/kalendar-blagdana/2028/">2028.</a></nav>
   </div>
@@ -357,7 +357,7 @@ var now=new Date(),q=new URLSearchParams(location.search),initialDate=q.get("dat
 function r(){
  var H=blagdani(y),K=Object.keys(H).sort(),html="",annual=0,t=kljuc(now);
  document.getElementById("god").textContent=y+".";
- if(!window.RS_FIXED){document.getElementById("naslov").textContent="Blagdani i neradni dani "+y+".";document.title="Blagdani i neradni dani "+y+". u Hrvatskoj | Radni sati";}
+ if(!window.RS_FIXED){document.getElementById("naslov").textContent=(y===2026?"Blagdani, neradni dani i računovodstveni rokovi ":"Blagdani i neradni dani ")+y+".";document.title=(y===2026?"Blagdani, neradni dani i računovodstveni rokovi 2026.":"Blagdani i neradni dani "+y+". u Hrvatskoj")+" | Radni sati";}
  K.forEach(function(k){var p=k.split("-").map(Number),d=new Date(p[0],p[1]-1,p[2]),w=d.getDay(),we=w===0||w===6;
  html+="<tr id=\"blagdan-"+k+"\" class=\"holiday-row\"><td>"+p[2]+". "+MJG[p[1]-1]+"</td><td>"+DAN[w]+"</td><td>"+H[k]+"</td><td><span class=\"badge "+(we?"b-vik\">vikend":"b-rad\">radni dan")+"</span></td></tr>";
  });
@@ -415,5 +415,7 @@ if(initialDate&&/^\d{4}-\d{2}-\d{2}$/.test(initialDate))selectHoliday(initialDat
 })();
 </script>
 <script>(function(){var b=document.querySelector(".rs-burger"),m=document.getElementById("rs-menu");if(!b||!m)return;b.onclick=function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o);b.textContent=o?"✕":"☰";b.setAttribute("aria-label",o?"Zatvori izbornik":"Otvori izbornik")};var y=new Date().getFullYear(),f=document.getElementById("rs-fond");if(f&&y>=2024&&y<=2028)f.href="/fond-sati-"+y+"/fond-sati-"+y+".html";var p=location.pathname;m.querySelectorAll("a[data-sek]").forEach(function(a){var s=a.dataset.sek;if(s==="/"?(p==="/"||p==="/index.html"):p.indexOf(s)===0)a.setAttribute("aria-current","page")});})();</script>
+<script src="/rokovi/rokovi-2026.js"></script>
+<script src="/rokovi/rokovi-kalendar.js"></script>
 </body>
 </html>

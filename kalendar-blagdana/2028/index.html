@@ -416,5 +416,7 @@ if(initialDate&&/^\d{4}-\d{2}-\d{2}$/.test(initialDate))selectHoliday(initialDat
 })();
 </script>
 <script>(function(){var b=document.querySelector(".rs-burger"),m=document.getElementById("rs-menu");if(!b||!m)return;b.onclick=function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o);b.textContent=o?"✕":"☰";b.setAttribute("aria-label",o?"Zatvori izbornik":"Otvori izbornik")};var y=new Date().getFullYear(),f=document.getElementById("rs-fond");if(f&&y>=2024&&y<=2028)f.href="/fond-sati-"+y+"/fond-sati-"+y+".html";var p=location.pathname;m.querySelectorAll("a[data-sek]").forEach(function(a){var s=a.dataset.sek;if(s==="/"?(p==="/"||p==="/index.html"):p.indexOf(s)===0)a.setAttribute("aria-current","page")});})();</script>
+<script src="/rokovi/rokovi-2026.js"></script>
+<script src="/rokovi/rokovi-kalendar.js"></script>
 </body>
 </html>

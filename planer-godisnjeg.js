@@ -61,6 +61,8 @@
   .pl-blok b{color:var(--neon-gold)}
   .pl-prazno{color:var(--text-muted);font-size:.88rem}
   @media(max-width:640px){.pl-stat{grid-template-columns:repeat(2,1fr)}.pl-blok{flex-direction:column;gap:2px}}
+  .pl-stat{position:sticky;top:56px;z-index:30;background:var(--bg-main,#070611);padding:8px 0;box-shadow:0 10px 14px -12px rgba(0,0,0,.9)}
+  @media(max-width:640px){.pl-stat{grid-template-columns:repeat(4,1fr);gap:6px;padding:6px 0}.pl-stat div{padding:6px 7px;border-radius:8px}.pl-stat b{font-size:1.15rem}.pl-stat span{display:block;font-size:.6rem;line-height:1.15}}
   `;
   var st0 = document.createElement('style'); st0.textContent = css; document.head.appendChild(st0);
 
