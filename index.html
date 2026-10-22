@@ -218,7 +218,7 @@ header.hero{padding:72px 0 38px}
 .today-live{margin-left:auto;color:#69e0b2;font-size:.62rem;letter-spacing:.1em}
 .today-clock{font-family:Orbitron,sans-serif;font-size:clamp(2.6rem,4.5vw,3.7rem);font-weight:800;color:#fff;letter-spacing:.025em;line-height:1.4;font-variant-numeric:tabular-nums;margin-top:16px}
 .today-clock small{font-size:.33em;color:var(--neon-cyan);vertical-align:baseline}
-.today-date{color:#cbd5e1;font-size:.95rem;text-transform:capitalize}
+.today-date{color:#cbd5e1;font-size:.95rem}
 .today-divider{height:1px;background:rgba(255,255,255,.1);margin:20px 0}
 .today-status{display:flex;gap:12px;align-items:center}
 #today-status-icon{display:grid;place-items:center;min-width:42px;height:42px;background:rgba(16,185,129,.11);border:1px solid rgba(16,185,129,.25);border-radius:11px;color:#50e0a6;font-size:1.35rem}
@@ -263,12 +263,14 @@ a:focus-visible,button:focus-visible{outline:3px solid #f6c76d;outline-offset:3p
 a.today-holiday{display:block;text-decoration:none;color:#f7d18c;transition:color .2s}
 a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoration:underline}
 @media(max-width:400px){.next-holiday-row{padding:10px 15px}}
-</style><style>nav .wrap{gap:12px}.nav-r{display:flex;align-items:center;gap:18px}.nav-r .about-link{color:var(--neon-cyan);font-size:.8rem;font-weight:600}@media(max-width:420px){.nav-r{gap:12px}.nav-r a{font-size:.75rem}}</style></head>
+</style><style>nav .wrap{gap:12px}.nav-r{display:flex;align-items:center;gap:18px}.nav-r .about-link{color:var(--neon-cyan);font-size:.8rem;font-weight:600}@media(max-width:420px){.nav-r{gap:12px}.nav-r .about-link{font-size:.75rem}}.nav-r a.back-link[href*="evidencija"]::after{content:"→"}</style><meta name="google-adsense-account" content="ca-pub-6830707036064247">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6830707036064247" crossorigin="anonymous"></script>
+</head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a href="/" class="wordmark">RADNI<span>SATI</span>.HR</a>
+    <a href="/" class="wordmark">RADNI-<span>SATI</span>.HR</a>
     <span class="nav-r"><a href="/o-nama/" class="about-link">O nama</a><a href="/evidencija-rada/evidencija-rada.html" class="back-link">Otvori evidenciju →</a></span>
   </div>
 </nav>
@@ -351,7 +353,7 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
 
 <footer>
   <div class="wrap">Radni sati · fond sati, blagdani i evidencija rada — <a href="/" style="color:var(--neon-cyan);">radni-sati.hr</a></div>
-<div style="text-align:center;margin-top:12px"><a href="/o-nama/" style="color:var(--neon-cyan)">O nama</a> · Izradio <a href="https://retroapplab.com/" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan)">RetroAppLab</a></div></footer>
+<div style="text-align:center;margin-top:12px"><a href="/o-nama/" style="color:var(--neon-cyan)">O nama</a> · Izradio <a href="https://retroapplab.com/" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan)">RetroAppLab</a></div><div style="text-align:center;margin-top:8px;font-size:.8rem"><a href="/politika-privatnosti/" style="color:var(--neon-cyan)">Pravila privatnosti</a></div></footer>
 
 
 <script>
@@ -375,7 +377,7 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
     add(5,1,'Praznik rada');add(5,30,'Dan državnosti');
     relative(60,'Tijelovo');add(6,22,'Dan antifašističke borbe');
     add(8,5,'Dan pobjede i domovinske zahvalnosti');add(8,15,'Velika Gospa');
-    add(11,1,'Svi sveti');add(11,18,'Dan sjećanja na žrtve Domovinskog rata');
+    add(11,1,'Svi sveti');add(11,18,'Dan sjećanja na žrtve Domovinskog rata i Dan sjećanja na žrtvu Vukovara i Škabrnje');
     add(12,25,'Božić');add(12,26,'Sveti Stjepan');
     return list.sort((a,b)=>a.date.localeCompare(b.date));
   }
@@ -385,7 +387,7 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
     document.getElementById('today-clock').textContent=`${p.hour}:${p.minute}`;
     if(iso===lastDay)return;
     lastDay=iso;
-    document.getElementById('today-date').textContent=fullDate.format(now);
+    {const fd=fullDate.format(now);document.getElementById('today-date').textContent=fd.charAt(0).toUpperCase()+fd.slice(1);}
     const all=[...holidays(y),...holidays(y+1)];
     const current=all.find(h=>h.date===iso);
     const weekday=new Date(`${iso}T12:00:00Z`).getUTCDay();
@@ -414,7 +416,7 @@ a.today-holiday:hover,a.today-holiday:focus-visible{color:#fff0c5;text-decoratio
     const next=all.find(h=>h.date>iso);
     if(next){
       const [yy,mm,dd]=next.date.split('-').map(Number);
-      document.getElementById('next-date').textContent=`${dd}. ${new Intl.DateTimeFormat('hr-HR',{month:'long',timeZone:tz}).format(new Date(Date.UTC(yy,mm-1,dd,12)))}`;
+      document.getElementById('next-date').textContent=new Intl.DateTimeFormat('hr-HR',{day:'numeric',month:'long',timeZone:tz}).format(new Date(Date.UTC(yy,mm-1,dd,12)));
       document.getElementById('next-holiday').textContent=next.name;
       const destination='/kalendar-blagdana/kalendar-blagdana.html?g='+yy+'&datum='+encodeURIComponent(next.date);
       document.getElementById('next-holiday-link').href=destination;

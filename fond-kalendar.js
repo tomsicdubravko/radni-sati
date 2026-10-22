@@ -38,7 +38,7 @@
     dodaj(new Date(y, 7, 5), 'Dan pobjede i domovinske zahvalnosti');
     dodaj(new Date(y, 7, 15), 'Velika Gospa');
     dodaj(new Date(y, 10, 1), 'Svi sveti');
-    dodaj(new Date(y, 10, 18), 'Dan sjećanja na žrtve Domovinskog rata');
+    dodaj(new Date(y, 10, 18), 'Dan sjećanja na žrtve Domovinskog rata i Dan sjećanja na žrtvu Vukovara i Škabrnje');
     dodaj(new Date(y, 11, 25), 'Božić');
     dodaj(new Date(y, 11, 26), 'Sveti Stjepan');
   })();

@@ -183,12 +183,14 @@ header.hero .lead{max-width:850px}
 .note{border-left:3px solid var(--neon-cyan);padding:17px 19px;background:rgba(0,242,254,.045);border-radius:0 9px 9px 0}
 @media(max-width:600px){.stat-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat-card{padding:16px 7px}.stat-card .label{font-size:.72rem}.fond-table-wrap th,.fond-table-wrap td{padding:12px 10px}.year-switcher a{min-width:48px;padding:9px}}
 </style>
-<style>nav .wrap{gap:12px}.nav-r{display:flex;align-items:center;gap:18px}.nav-r .about-link{color:var(--neon-cyan);font-size:.8rem;font-weight:600}@media(max-width:420px){.nav-r{gap:12px}.nav-r a{font-size:.75rem}}</style></head>
+<style>nav .wrap{gap:12px}.nav-r{display:flex;align-items:center;gap:18px}.nav-r .about-link{color:var(--neon-cyan);font-size:.8rem;font-weight:600}@media(max-width:420px){.nav-r{gap:12px}.nav-r .about-link{font-size:.75rem}}.nav-r a.back-link[href*="evidencija"]::after{content:"→"}</style><meta name="google-adsense-account" content="ca-pub-6830707036064247">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6830707036064247" crossorigin="anonymous"></script>
+</head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a href="/" class="wordmark">RADNI<span>SATI</span>.HR</a>
+    <a href="/" class="wordmark">RADNI-<span>SATI</span>.HR</a>
     <span class="nav-r"><a href="/o-nama/" class="about-link">O nama</a><a href="/" class="back-link">← Početna</a></span>
   </div>
 </nav>
@@ -245,6 +247,8 @@ header.hero .lead{max-width:850px}
     <strong>Fond sati</strong> = svi dani od ponedjeljka do petka × 8 sati, uključujući blagdane. To je ukupan broj sati za obračun plaće.
   </p>
 
+  <p class="note" style="margin-bottom:28px">📅 Svi blagdani, produženi vikendi i mostovi za 2026. godinu: <a href="/kalendar-blagdana/2026/" style="color:var(--neon-cyan)">Blagdani i neradni dani 2026.</a></p>
+
   <section class="faq">
     <h2>Česta pitanja o radnim satima 2026.</h2>
     <h3>Koliko radnih sati ima 2026. godina?</h3>
@@ -275,7 +279,7 @@ header.hero .lead{max-width:850px}
 
 <footer>
   <div class="wrap">Radni sati · fond sati, blagdani i evidencija rada — <a href="/" style="color:var(--neon-cyan);">radni-sati.hr</a></div>
-<div style="text-align:center;margin-top:12px"><a href="/o-nama/" style="color:var(--neon-cyan)">O nama</a> · Izradio <a href="https://retroapplab.com/" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan)">RetroAppLab</a></div></footer>
+<div style="text-align:center;margin-top:12px"><a href="/o-nama/" style="color:var(--neon-cyan)">O nama</a> · Izradio <a href="https://retroapplab.com/" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan)">RetroAppLab</a></div><div style="text-align:center;margin-top:8px;font-size:.8rem"><a href="/politika-privatnosti/" style="color:var(--neon-cyan)">Pravila privatnosti</a></div></footer>
 
 <style>
   tbody tr.mj-sad td{background:rgba(0,242,254,.12);font-weight:700;color:#fff}
@@ -344,7 +348,7 @@ header.hero .lead{max-width:850px}
     dodaj(new Date(y, 7, 5), 'Dan pobjede i domovinske zahvalnosti');
     dodaj(new Date(y, 7, 15), 'Velika Gospa');
     dodaj(new Date(y, 10, 1), 'Svi sveti');
-    dodaj(new Date(y, 10, 18), 'Dan sjećanja na žrtve Domovinskog rata');
+    dodaj(new Date(y, 10, 18), 'Dan sjećanja na žrtve Domovinskog rata i Dan sjećanja na žrtvu Vukovara i Škabrnje');
     dodaj(new Date(y, 11, 25), 'Božić');
     dodaj(new Date(y, 11, 26), 'Sveti Stjepan');
   })();

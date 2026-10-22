@@ -232,11 +232,13 @@ header.hero{padding:40px 0 20px}.hero h1{font-size:clamp(1.8rem,4vw,2.8rem)}.her
 .ysel{margin-top:16px}.overview{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:4px 0 17px;color:var(--neon-cyan)}.overview strong{font-size:1.08rem}.overview span{color:var(--text-muted);font-size:.83rem}
 .months{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0 22px}.mon{padding:17px;border:1px solid var(--border-dim);border-radius:10px;min-width:0}.month-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:12px}.month-heading h3{margin:0;font-size:1rem;color:#fff}.month-heading strong{font-size:.78rem;color:var(--neon-cyan);white-space:nowrap}.mg{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.mg .h{text-align:center;font-size:.73rem;color:var(--text-muted)}.mg .c{font:inherit;color:inherit;border:0;background:transparent;min-width:0;width:100%;aspect-ratio:1;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.81rem}.mg .c.we{background:rgba(150,160,180,.15);color:#aab4c4}.mg .c.hol{background:#bd302d;color:#fff;font-weight:800}.mg .c.tod{outline:2px solid var(--neon-cyan);outline-offset:-2px}.mg .c:hover{outline:2px solid var(--neon-cyan)}.month-stats{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--border-dim);margin-top:13px;padding-top:10px;font-size:.71rem;color:var(--text-muted)}.month-stats span{display:flex;flex-direction:column;gap:3px}.month-stats b{color:#fff;font-size:.87rem}.month-stats span:last-child{text-align:right}.holiday-info{border:1px solid rgba(0,242,254,.3);border-radius:9px;background:rgba(0,242,254,.04);padding:14px;margin:14px 0 24px;font-size:.9rem}.holiday-details{margin:24px 0 35px}.holiday-details summary{cursor:pointer;font-weight:700;padding:15px;border:1px solid var(--border-dim);border-radius:9px}.holiday-details .table-wrap{margin-top:14px}
 @media(max-width:850px){.months{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.months{grid-template-columns:1fr}.mon{padding:18px}.mg .c{font-size:.95rem}.month-stats{font-size:.8rem}}
-</style><style>nav .wrap{gap:12px}.nav-r{display:flex;align-items:center;gap:18px}.nav-r .about-link{color:var(--neon-cyan);font-size:.8rem;font-weight:600}@media(max-width:420px){.nav-r{gap:12px}.nav-r a{font-size:.75rem}}</style></head>
+</style><style>nav .wrap{gap:12px}.nav-r{display:flex;align-items:center;gap:18px}.nav-r .about-link{color:var(--neon-cyan);font-size:.8rem;font-weight:600}@media(max-width:420px){.nav-r{gap:12px}.nav-r .about-link{font-size:.75rem}}.nav-r a.back-link[href*="evidencija"]::after{content:"→"}</style><style>.mostovi{margin:10px 0 40px}.mostovi h2{font-size:1.3rem;color:#fff;margin-bottom:8px}.mostovi-lead{color:var(--text-muted);font-size:.92rem;margin-bottom:14px}.mostovi td{vertical-align:top;font-size:.88rem;line-height:1.45}.mostovi td small{color:var(--text-muted)}.mostovi td b{color:var(--neon-cyan)}.mostovi-vikend{font-size:.85rem;color:var(--text-muted);margin-top:-20px}.mostovi-vikend b{color:var(--text-light)}.god-linkovi{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:.85rem}.god-linkovi a{padding:4px 12px;border:1px solid var(--border-dim);border-radius:999px;color:var(--text-light);text-decoration:none}.god-linkovi a:hover{border-color:var(--neon-cyan)}.god-linkovi a.on{border-color:var(--neon-gold);color:var(--neon-gold);font-weight:700}.mostovi td b.bn{color:#fff}@media(max-width:700px){.mostovi .table-wrap{overflow:visible;border:0}.mostovi table,.mostovi tbody{display:block;width:100%;min-width:0!important}.mostovi thead{display:none}.mostovi tr{display:block;border:1px solid var(--border-dim);border-radius:10px;padding:10px 12px;margin-bottom:10px;background:var(--bg-card)}.mostovi td{display:grid;grid-template-columns:36% minmax(0,1fr);gap:10px;border:0!important;padding:5px 0!important;text-align:right}.mostovi td .v{min-width:0;overflow-wrap:anywhere}.mostovi td::before{content:attr(data-l);color:var(--text-muted);font-size:.75rem;text-align:left}.mostovi td:first-child{display:block;text-align:left}.mostovi td:first-child::before{display:none}.mostovi-vikend{margin-top:0}}</style><meta name="google-adsense-account" content="ca-pub-6830707036064247">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6830707036064247" crossorigin="anonymous"></script>
+</head>
 <body>
 <nav>
   <div class="wrap">
-    <a href="/" class="wordmark">RADNI<span>SATI</span>.HR</a>
+    <a href="/" class="wordmark">RADNI-<span>SATI</span>.HR</a>
     <span class="nav-r"><a href="/o-nama/" class="about-link">O nama</a><a href="/" class="back-link">← Početna</a></span>
   </div>
 </nav>
@@ -246,6 +248,7 @@ header.hero{padding:40px 0 20px}.hero h1{font-size:clamp(1.8rem,4vw,2.8rem)}.her
     <h1 id="naslov">Blagdani i neradni dani u Hrvatskoj</h1>
     <p class="lead">Pregled svih 12 mjeseci, hrvatskih blagdana i fonda sati na jednom mjestu. Odaberite godinu i kliknite na blagdan za detalje.</p>
     <div class="ysel"><button id="prev" aria-label="Prethodna godina">‹</button><b id="god"></b><button id="next" aria-label="Sljedeća godina">›</button></div>
+    <nav class="god-linkovi" aria-label="Blagdani po godinama"><a href="/kalendar-blagdana/2024/">2024.</a><a href="/kalendar-blagdana/2025/">2025.</a><a href="/kalendar-blagdana/2026/">2026.</a><a href="/kalendar-blagdana/2027/">2027.</a><a href="/kalendar-blagdana/2028/">2028.</a></nav>
   </div>
 </header>
 <main class="wrap">
@@ -256,6 +259,7 @@ header.hero{padding:40px 0 20px}.hero h1{font-size:clamp(1.8rem,4vw,2.8rem)}.her
   <details class="holiday-details"><summary>Popis svih blagdana i neradnih dana <span id="holidayCount"></span></summary>
     <div class="table-wrap"><table><thead><tr><th>Datum</th><th>Dan</th><th>Blagdan</th><th>Pada na</th></tr></thead><tbody id="lista"></tbody></table></div>
   </details>
+  <section class="mostovi" id="mostovi"></section>
   <section class="faq">
     <h2>Česta pitanja o blagdanima</h2>
     <h3>Koliko blagdana ima Hrvatska?</h3>
@@ -264,37 +268,94 @@ header.hero{padding:40px 0 20px}.hero h1{font-size:clamp(1.8rem,4vw,2.8rem)}.her
     <p>Blagdan koji padne na vikend ne prenosi se na radni dan. Zato je broj blagdana koji umanjuju radne dane svake godine drukčiji, a time i fond sati.</p>
     <h3>Radi li se na blagdan?</h3>
     <p>Blagdan je neradni dan i radnik za njega ima pravo na naknadu plaće. Ako radi na blagdan, pripada mu povećana plaća, a visina povećanja određuje se kolektivnim ugovorom, pravilnikom o radu ili ugovorom o radu.</p>
+    <h3>Kako iskoristiti blagdane za produženi vikend?</h3>
+    <p>Blagdan u ponedjeljak ili petak sam daje produženi vikend od tri dana. Blagdan u utorak ili četvrtak spaja se s vikendom uz jedan dan godišnjeg, a blagdan u srijedu uz dva. Tablica „Produženi vikendi i mostovi“ iznad za svaku godinu pokazuje koliko dana godišnjeg treba i koliko slobodnih dana se dobije.</p>
     <h3>Kako blagdani utječu na fond sati?</h3>
     <p>Blagdani koji padnu na radni dan ulaze u fond sati, ali se u obračunu plaće iskazuju posebno, kao sati blagdana. Broj sati po mjesecima za svaku godinu nalazi se na stranicama <a href="/fond-sati-2026/fond-sati-2026.html">fond sati</a>.</p>
   </section>
 </main>
 <footer>
   <div class="wrap">Radni sati · fond sati, blagdani i evidencija rada — <a href="/" style="color:var(--neon-cyan);">radni-sati.hr</a></div>
-<div style="text-align:center;margin-top:12px"><a href="/o-nama/" style="color:var(--neon-cyan)">O nama</a> · Izradio <a href="https://retroapplab.com/" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan)">RetroAppLab</a></div></footer>
+<div style="text-align:center;margin-top:12px"><a href="/o-nama/" style="color:var(--neon-cyan)">O nama</a> · Izradio <a href="https://retroapplab.com/" target="_blank" rel="noopener noreferrer" style="color:var(--neon-cyan)">RetroAppLab</a></div><div style="text-align:center;margin-top:8px;font-size:.8rem"><a href="/politika-privatnosti/" style="color:var(--neon-cyan)">Pravila privatnosti</a></div></footer>
 <script>
 
 function uskrs(y){var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(y,mo-1,da)}
 function p2(n){return String(n).padStart(2,"0")}
 function kljuc(d){return d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate())}
-function blagdani(y){var H={},fx=[[0,1,"Nova godina"],[0,6,"Bogojavljenje ili Sveta tri kralja"],[4,1,"Praznik rada"],[4,30,"Dan državnosti"],[5,22,"Dan antifašističke borbe"],[7,5,"Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja"],[7,15,"Velika Gospa"],[10,1,"Svi sveti"],[10,18,"Dan sjećanja na žrtve Domovinskog rata"],[11,25,"Božić"],[11,26,"Sveti Stjepan"]];
+function blagdani(y){var H={},fx=[[0,1,"Nova godina"],[0,6,"Bogojavljenje ili Sveta tri kralja"],[4,1,"Praznik rada"],[4,30,"Dan državnosti"],[5,22,"Dan antifašističke borbe"],[7,5,"Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja"],[7,15,"Velika Gospa"],[10,1,"Svi sveti"],[10,18,"Dan sjećanja na žrtve Domovinskog rata i Dan sjećanja na žrtvu Vukovara i Škabrnje"],[11,25,"Božić"],[11,26,"Sveti Stjepan"]];
 fx.forEach(function(x){H[kljuc(new Date(y,x[0],x[1]))]=x[2]});var u=uskrs(y);function s(n){return new Date(u.getFullYear(),u.getMonth(),u.getDate()+n)}
 H[kljuc(u)]="Uskrs";H[kljuc(s(1))]="Uskrsni ponedjeljak";H[kljuc(s(60))]="Tijelovo";return H}
 var MJ=["siječanj","veljača","ožujak","travanj","svibanj","lipanj","srpanj","kolovoz","rujan","listopad","studeni","prosinac"];
 var MJG=["siječnja","veljače","ožujka","travnja","svibnja","lipnja","srpnja","kolovoza","rujna","listopada","studenoga","prosinca"];
 var DAN=["nedjelja","ponedjeljak","utorak","srijeda","četvrtak","petak","subota"];
 
+var KR=["ned","pon","uto","sri","čet","pet","sub"];
+function rsAdd(d,n){return new Date(d.getFullYear(),d.getMonth(),d.getDate()+n)}
+function rsFree(d){var w=d.getDay();return w===0||w===6||!!blagdani(d.getFullYear())[kljuc(d)]}
+function rsDan(d,y){return d.getDate()+". "+MJG[d.getMonth()]+(d.getFullYear()!==y?" "+d.getFullYear()+".":"")}
+function rsRaspon(a,b,y){
+ if(kljuc(a)===kljuc(b))return rsDan(a,y);
+ if(a.getMonth()===b.getMonth()&&a.getFullYear()===b.getFullYear())return a.getDate()+".–"+rsDan(b,y);
+ return rsDan(a,y)+" – "+rsDan(b,y);
+}
+function rsDani(n){return n+(n%10===1&&n%100!==11?" dan":" dana")}
+function rsSlob(n){return n+(n%10===1&&n%100!==11?" slobodan dan":(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?" slobodna dana":" slobodnih dana"))}
+function mostoviPodaci(y){
+ var H=blagdani(y),K=Object.keys(H).sort(),seen={},rows=[],vikend=[];
+ K.forEach(function(k){
+  var p=k.split("-").map(Number),d=new Date(p[0],p[1]-1,p[2]),w=d.getDay();
+  if(w===0||w===6){
+   var a0=d,b0=d;while(rsFree(rsAdd(a0,-1)))a0=rsAdd(a0,-1);while(rsFree(rsAdd(b0,1)))b0=rsAdd(b0,1);
+   var hasWork=false;for(var x0=a0;x0<=b0;x0=rsAdd(x0,1)){var w0=x0.getDay();if(w0!==0&&w0!==6&&blagdani(x0.getFullYear())[kljuc(x0)])hasWork=true}
+   if(!hasWork)vikend.push(H[k]+" ("+KR[w]+" "+rsDan(d,y)+")");
+   return;
+  }
+  var a=d,b=d;while(rsFree(rsAdd(a,-1)))a=rsAdd(a,-1);while(rsFree(rsAdd(b,1)))b=rsAdd(b,1);
+  var bk=kljuc(a);if(seen[bk])return;seen[bk]=1;
+  var names=[],dates=[];for(var x=a;x<=b;x=rsAdd(x,1)){var hh=blagdani(x.getFullYear())[kljuc(x)];if(hh){names.push(hh);dates.push(x)}}
+  var len=Math.round((b-a)/864e5)+1,opts=[];
+  [-1,1].forEach(function(dir){
+   var g=0,take=[],z=rsAdd(dir<0?a:b,dir);
+   while(!rsFree(z)&&g<5){g++;take.push(z);z=rsAdd(z,dir)}
+   if(g===0||g>4)return;
+   var e=z;while(rsFree(rsAdd(e,dir)))e=rsAdd(e,dir);
+   var from=dir<0?e:a,to=dir<0?b:e;take.sort(function(p,q){return p-q});
+   opts.push({g:g,take:take,from:from,to:to,total:Math.round((to-from)/864e5)+1});
+  });
+  opts.sort(function(p,q){return p.g-q.g||q.total-p.total});
+  rows.push({names:names,dates:dates,a:a,b:b,len:len,best:opts[0]||null});
+ });
+ return {rows:rows,vikend:vikend};
+}
+function mostoviHTML(y){
+ var P=mostoviPodaci(y),tb="";
+ P.rows.forEach(function(r){
+  var dat=r.dates.filter(function(d){return d.getFullYear()===y}).map(function(d){return KR[d.getDay()]+" "+rsDan(d,y)}).join(", ");
+  var nat=r.len>=3?"<span class=\"badge b-rad\">"+rsSlob(r.len)+"</span><br><small>"+rsRaspon(r.a,r.b,y)+"</small>":"<span class=\"badge b-vik\">ne</span>";
+  var most="—";
+  if(r.best){var t=r.best.take,tk=t.length===1?KR[t[0].getDay()]+" "+rsDan(t[0],y):KR[t[0].getDay()]+" "+rsDan(t[0],y)+" – "+KR[t[t.length-1].getDay()]+" "+rsDan(t[t.length-1],y);
+   most="Uzmi <b>"+rsDani(r.best.g)+"</b> godišnjeg ("+tk+")<br>→ <b>"+rsSlob(r.best.total)+"</b> <small>("+rsRaspon(r.best.from,r.best.to,y)+")</small>"}
+  tb+="<tr><td data-l=\"Blagdan\"><b class=\"bn\">"+r.names.join(" · ")+"</b></td><td data-l=\"Datum\"><span class=\"v\">"+dat+"</span></td><td data-l=\"Bez godišnjeg\"><span class=\"v\">"+nat+"</span></td><td data-l=\"Najbolji most\"><span class=\"v\">"+most+"</span></td></tr>";
+ });
+ var h="<h2>Produženi vikendi i mostovi "+y+".</h2><p class=\"mostovi-lead\">Kada blagdan pada uz vikend, dobiva se produženi vikend bez dana godišnjeg. Kada pada usred tjedna, jedan ili dva dana godišnjeg spoje ga s vikendom. Za svaki blagdan na radni dan prikazan je najisplativiji „most“.</p>";
+ h+="<div class=\"table-wrap\"><table><thead><tr><th>Blagdan</th><th>Datum</th><th>Produženo bez godišnjeg</th><th>Najbolji most</th></tr></thead><tbody>"+tb+"</tbody></table></div>";
+ if(P.vikend.length)h+="<p class=\"mostovi-vikend\"><b>Padaju na vikend i ne prenose se na radni dan:</b> "+P.vikend.join(", ")+".</p>";
+ return h;
+}
+
+var RS_GOD=[2024, 2025, 2026, 2027, 2028];
 (function(){
 var now=new Date(),q=new URLSearchParams(location.search),initialDate=q.get("datum"),y=Number(q.get("g"))||(initialDate?Number(initialDate.slice(0,4)):now.getFullYear());
 function r(){
  var H=blagdani(y),K=Object.keys(H).sort(),html="",annual=0,t=kljuc(now);
  document.getElementById("god").textContent=y+".";
- document.getElementById("naslov").textContent="Blagdani i fond sati "+y+".";
- document.title="Blagdani i fond sati "+y+". | Radni sati";
+ if(!window.RS_FIXED){document.getElementById("naslov").textContent="Blagdani i neradni dani "+y+".";document.title="Blagdani i neradni dani "+y+". u Hrvatskoj | Radni sati";}
  K.forEach(function(k){var p=k.split("-").map(Number),d=new Date(p[0],p[1]-1,p[2]),w=d.getDay(),we=w===0||w===6;
  html+="<tr id=\"blagdan-"+k+"\" class=\"holiday-row\"><td>"+p[2]+". "+MJG[p[1]-1]+"</td><td>"+DAN[w]+"</td><td>"+H[k]+"</td><td><span class=\"badge "+(we?"b-vik\">vikend":"b-rad\">radni dan")+"</span></td></tr>";
  });
  document.getElementById("lista").innerHTML=html;
  document.getElementById("holidayCount").textContent="("+K.length+")";
+ document.getElementById("mostovi").innerHTML=mostoviHTML(y);
  var m="";
  for(var i=0;i<12;i++){
   var f=(new Date(y,i,1).getDay()+6)%7,n=new Date(y,i+1,0).getDate(),work=0,holWork=0;
@@ -311,7 +372,7 @@ function r(){
  document.getElementById("mjeseci").innerHTML=m;
  document.getElementById("yearFund").textContent=annual;
  document.getElementById("holidayInfo").textContent="Kliknite na crveno označeni datum za naziv blagdana.";
- if(location.protocol!=="file:")history.replaceState(null,"",location.pathname+(y===now.getFullYear()?"?g="+y:"?g="+y)+(initialDate?"&datum="+encodeURIComponent(initialDate):""));
+ if(location.protocol!=="file:"&&!window.RS_FIXED)history.replaceState(null,"",location.pathname+"?g="+y+(initialDate?"&datum="+encodeURIComponent(initialDate):""));
 }
 document.getElementById("mjeseci").addEventListener("click",function(e){
  var btn=e.target.closest("button[data-date]");if(!btn)return;
@@ -337,8 +398,9 @@ function selectHoliday(key,scroll){
  var d=key.split("-");document.getElementById("holidayInfo").textContent=d[2]+". "+MJG[Number(d[1])-1]+" "+y+". — "+h;
  if(scroll)requestAnimationFrame(function(){setTimeout(function(){target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth",block:"center"})},80)});
 }
-document.getElementById("prev").onclick=function(){initialDate=null;y--;r()};
-document.getElementById("next").onclick=function(){initialDate=null;y++;r()};
+function rsIdi(n){if(RS_GOD.indexOf(n)>=0){location.href="/kalendar-blagdana/"+n+"/";}else{initialDate=null;y=n;r();}}
+document.getElementById("prev").onclick=function(){rsIdi(y-1)};
+document.getElementById("next").onclick=function(){rsIdi(y+1)};
 r();
 if(initialDate&&/^\d{4}-\d{2}-\d{2}$/.test(initialDate))selectHoliday(initialDate,true);
 })();
